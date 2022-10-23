@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -7,54 +8,21 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 
-import {StyleSheet, Text, useColorScheme, View} from 'react-native';
+import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
+import BottomTabs from './navigators/BottomTabs';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+export default function App() {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View>
+      <StatusBar style="auto" />
+      <Text> Hello. This is our app</Text>
+      <Button title="button that doesn't do anything"/>
+      <Button title="another button that doesn't do anything"/>
+      {/* <BottomTabs/> */}
     </View>
   );
-};
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <NavigationContainer>
-      <Text> Hello World </Text>
-    </NavigationContainer>
-  );
-};
+}
 
 const styles = StyleSheet.create({
   sectionContainer: {
@@ -74,5 +42,3 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 });
-
-export default App;

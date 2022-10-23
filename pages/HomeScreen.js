@@ -2,6 +2,8 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-export default function AboutUs() {
-  return <Text> This is our About Us Page </Text>;
+export default function HomeScreen() {
+  return (
+    <Text> This is our Home Screen </Text>
+  );
 }
