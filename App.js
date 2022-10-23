@@ -10,16 +10,14 @@
 import React from 'react';
 
 import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
-import BottomTabs from './navigators/BottomTabs';
 
 export default function App() {
   return (
-    <View>
-      <StatusBar style="auto" />
-      <Text> Hello. This is our app</Text>
-      <Button title="button that doesn't do anything"/>
-      <Button title="another button that doesn't do anything"/>
-      {/* <BottomTabs/> */}
+    <View style={styles.background}>
+        <StatusBar style="auto" />
+        <Text> Hello. This is our app</Text>
+        <Button title="Search for wildlife"/>
+        <Button title="View database"/>
     </View>
   );
 }
